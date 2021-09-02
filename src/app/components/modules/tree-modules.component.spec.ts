@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScrollableAreaComponent } from './scrollable-area.component';
+import { TreeModulesComponent } from './tree-modules.component';
 
-describe('ScrollableAreaComponent', () => {
-  let component: ScrollableAreaComponent;
-  let fixture: ComponentFixture<ScrollableAreaComponent>;
+describe('TreeModulesComponent', () => {
+  let component: TreeModulesComponent;
+  let fixture: ComponentFixture<TreeModulesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ScrollableAreaComponent ]
+      declarations: [ TreeModulesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ScrollableAreaComponent);
+    fixture = TestBed.createComponent(TreeModulesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

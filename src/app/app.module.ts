@@ -1,29 +1,36 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DxResponsiveBoxModule, DxAccordionModule, DxScrollViewModule, DxTextBoxModule } from 'devextreme-angular';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatInputModule} from '@angular/material/input';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from '@angular/material/icon';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ModulesComponent } from './components/modules/modules.component';
-import { ScrollableAreaComponent } from './components/scrollable-area/scrollable-area.component';
+import { TreeModulesComponent } from './components/modules/tree-modules.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DxBoxModule, DxTextBoxModule, DxTreeListModule } from 'devextreme-angular';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    ModulesComponent,
-    ScrollableAreaComponent,
+    TreeModulesComponent,
     SearchBoxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DxResponsiveBoxModule,
-    DxAccordionModule,
-    DxScrollViewModule,
-    DxTextBoxModule
+    BrowserAnimationsModule,
+    DxBoxModule,
+    DxTextBoxModule,
+    DxTreeListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
