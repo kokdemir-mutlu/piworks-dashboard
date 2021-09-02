@@ -1,6 +1,6 @@
 import { TreeListItem } from "./tree-list-item";
 
-export interface PIProject extends TreeListItem{
+export interface PIProject{
   id : number;
   name : string;
 

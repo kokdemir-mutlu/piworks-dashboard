@@ -1,0 +1,27 @@
+<!-- <dx-tree-list
+    [dataSource]="modules"
+    [rootValue]="-1"
+    keyExpr="idForTreeList"
+    parentIdExpr="headId">
+</dx-tree-list> -->
+
+<div id="accordion">
+  <dx-accordion
+      #accordion
+      [dataSource]="modules"
+      [collapsible]="false"
+      [multiple]="false"
+      [animationDuration]="300"
+      [selectedItems]="[modules[0]]">
+      <div *dxTemplate="let module of 'title'">
+          <h1>{{module.name}}</h1>
+      </div>
+      <div *dxTemplate="let module of 'item'">
+          <div *ngIf="module.projects.length > 0" class="innerDiv">
+            <ul style="list-style: none;">
+              <li href="#" *ngFor="let project of module.projects">{{project.name}}</li>
+            </ul>
+          </div>
+      </div>
+  </dx-accordion>
+</div>

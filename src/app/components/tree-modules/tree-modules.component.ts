@@ -14,7 +14,7 @@ export class TreeModulesComponent implements OnInit {
   constructor(private moduleService:MockModulesService) { }
 
   ngOnInit(): void {
-
+    this.getModules();
   }
 
   getModules():void{
