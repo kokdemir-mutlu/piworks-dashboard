@@ -12,4 +12,12 @@ export class ProjectContentsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showBuilds():void{
+
+  }
+
+  showTrends():void{
+
+  }
+
 }

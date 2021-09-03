@@ -1,9 +1,6 @@
 
 .main-div {
   height: 100%;
-}
-
-.main-div {
   display: flex;
   align-items: center;
   padding-top: 40px;
