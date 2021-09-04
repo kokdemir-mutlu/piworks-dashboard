@@ -1,33 +1,7 @@
-::ng-deep #accordion h1 {
-  font-size: 20px;
-}
-
-::ng-deep #accordion h1,
-::ng-deep #accordion p {
-  margin: 0;
-}
-
-::ng-deep .dx-theme-material #accordion .dx-accordion-item-opened .dx-accordion-item-title {
-  display: flex;
-}
-
-::ng-deep .dx-theme-material #accordion .dx-accordion-item-opened h1 {
-  align-self: center;
-}
-
-/*  */
-
-
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
+.module-list-section{
+  margin-top: 50px;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  bottom: 0;
 }

@@ -1,11 +1,10 @@
-<dx-box direction="row" width="100%" height="100%">
-
-  <dxi-item class="rect left-side" [ratio]="1">
-    <app-sidebar></app-sidebar>
-  </dxi-item>
-  <dxi-item class="rect right-side" [ratio]="4">
-    <app-project-contents></app-project-contents>
-    <router-outlet name='content'></router-outlet>
-  </dxi-item>
-
-</dx-box>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-10">
+      <app-project-contents></app-project-contents>
+    </div>
+  </div>
+</div>

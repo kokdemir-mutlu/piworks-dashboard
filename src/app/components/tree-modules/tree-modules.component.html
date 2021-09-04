@@ -1,84 +1,96 @@
-<!--
-<div id="accordion">
-  <dx-accordion
-      #accordion
-      [dataSource]="modules"
-      [collapsible]="false"
-      [multiple]="false"
-      [animationDuration]="300"
-      [selectedItems]="[modules[0]]">
-      <div *dxTemplate="let module of 'title'">
-          <h1>{{module.name}}</h1>
+<div class="module-list-section">
+  <div class="list-group list-group-flush border-bottom scrollarea">
+    <a  class="list-group-item list-group-item-action active py-3 lh-tight" aria-current="true">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 1</strong>
+        <small>Wed</small>
       </div>
-      <div *dxTemplate="let module of 'item'">
-          <div *ngIf="module.projects.length > 0" class="innerDiv">
-            <ul style="list-style: none;">
-              <li href="#" *ngFor="let project of module.projects">{{project.name}}</li>
-            </ul>
-          </div>
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
+    <a  class="list-group-item list-group-item-action py-3 lh-tight">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 2</strong>
+        <small class="text-muted">Tues</small>
       </div>
-  </dx-accordion>
-</div> -->
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
+    <a  class="list-group-item list-group-item-action py-3 lh-tight">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 3</strong>
+        <small class="text-muted">Mon</small>
+      </div>
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
 
-
-<!-- -------------------------------------------------------- -->
-<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-  <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-    <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-    <span class="fs-5 fw-semibold">Collapsible</span>
-  </a>
-  <ul class="list-unstyled ps-0">
-    <li class="mb-1">
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-        Home
-      </button>
-      <div class="collapse show" id="home-collapse">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          <li><a href="#" class="link-dark rounded">Overview</a></li>
-          <li><a href="#" class="link-dark rounded">Updates</a></li>
-          <li><a href="#" class="link-dark rounded">Reports</a></li>
-        </ul>
+    <a  class="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 4</strong>
+        <small class="text-muted">Wed</small>
       </div>
-    </li>
-    <li class="mb-1">
-      <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
-        Dashboard
-      </button>
-      <div class="collapse show" id="dashboard-collapse" style="">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          <li><a href="#" class="link-dark rounded">Overview</a></li>
-          <li><a href="#" class="link-dark rounded">Weekly</a></li>
-          <li><a href="#" class="link-dark rounded">Monthly</a></li>
-          <li><a href="#" class="link-dark rounded">Annually</a></li>
-        </ul>
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
+    <a  class="list-group-item list-group-item-action py-3 lh-tight">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 5</strong>
+        <small class="text-muted">Tues</small>
       </div>
-    </li>
-    <li class="mb-1">
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-        Orders
-      </button>
-      <div class="collapse" id="orders-collapse">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          <li><a href="#" class="link-dark rounded">New</a></li>
-          <li><a href="#" class="link-dark rounded">Processed</a></li>
-          <li><a href="#" class="link-dark rounded">Shipped</a></li>
-          <li><a href="#" class="link-dark rounded">Returned</a></li>
-        </ul>
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
+    <a  class="list-group-item list-group-item-action py-3 lh-tight">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 6</strong>
+        <small class="text-muted">Mon</small>
       </div>
-    </li>
-    <li class="border-top my-3"></li>
-    <li class="mb-1">
-      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-        Account
-      </button>
-      <div class="collapse" id="account-collapse">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          <li><a href="#" class="link-dark rounded">New...</a></li>
-          <li><a href="#" class="link-dark rounded">Profile</a></li>
-          <li><a href="#" class="link-dark rounded">Settings</a></li>
-          <li><a href="#" class="link-dark rounded">Sign out</a></li>
-        </ul>
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
+    <a  class="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 7</strong>
+        <small class="text-muted">Wed</small>
       </div>
-    </li>
-  </ul>
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
+    <a  class="list-group-item list-group-item-action py-3 lh-tight">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 8</strong>
+        <small class="text-muted">Tues</small>
+      </div>
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
+    <a  class="list-group-item list-group-item-action py-3 lh-tight">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 9</strong>
+        <small class="text-muted">Mon</small>
+      </div>
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
+    <a  class="list-group-item list-group-item-action py-3 lh-tight" aria-current="true">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 10</strong>
+        <small class="text-muted">Wed</small>
+      </div>
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
+    <a  class="list-group-item list-group-item-action py-3 lh-tight">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 11</strong>
+        <small class="text-muted">Tues</small>
+      </div>
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
+    <a  class="list-group-item list-group-item-action py-3 lh-tight">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 12</strong>
+        <small class="text-muted">Mon</small>
+      </div>
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
+    <a  class="list-group-item list-group-item-action py-3 lh-tight">
+      <div class="d-flex w-100 align-items-center justify-content-between">
+        <strong class="mb-1">Module 13</strong>
+        <small class="text-muted">Mon</small>
+      </div>
+      <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+    </a>
+  </div>
 </div>

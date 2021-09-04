@@ -1,7 +1,12 @@
-.main-div{
-  margin: 5px;
+.main-contents{
+  margin-top: 5px;
+  margin-left: 5px;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  bottom: 0;
 }
 
-.expand-all{
+.expand-all-button{
   margin-left: 10px;
 }
