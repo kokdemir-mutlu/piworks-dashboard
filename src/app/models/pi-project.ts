@@ -1,7 +1,7 @@
-import { TreeListItem } from "./tree-list-item";
 
 export interface PIProject{
   id : number;
+  idForTreeView : string;
   name : string;
 
 }

@@ -1,4 +1,15 @@
 <div class="sidebar">
-  <app-search-box></app-search-box>
-  <app-tree-modules></app-tree-modules>
+  <dx-tree-view
+    [searchEnabled]="true"
+    searchMode="startswith"
+    id="treeView"
+    [dataSource]="modules"
+    keyExpr="id"
+    displayExpr="name"
+    itemTemplate="modulesTemplate"
+  >
+    <div *dxTemplate="let module of 'modulesTemplate'">
+      {{ module.text }}
+    </div>
+  </dx-tree-view>
 </div>
