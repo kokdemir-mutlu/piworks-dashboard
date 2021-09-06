@@ -1,0 +1,15 @@
+.main-page{
+  display: flex;
+}
+
+.left-side{
+  flex: 2;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.main-contents{
+  flex: 10;
+  height: 100vh;
+  overflow: scroll;
+}

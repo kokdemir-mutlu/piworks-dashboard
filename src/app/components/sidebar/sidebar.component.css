@@ -1,10 +1,6 @@
 .sidebar{
-  /* width: 100%; */
   margin-top: 5px;
-  /* position: fixed; */
-  /* overflow-y: scroll;
-  top: 5;
-  bottom: 5; */
+  margin-left: 5px;
 }
 
 ::ng-deep #simple-treeview, #product-details {

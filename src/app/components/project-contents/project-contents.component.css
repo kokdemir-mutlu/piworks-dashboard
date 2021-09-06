@@ -1,12 +1,9 @@
-.main-contents{
-  margin-top: 5px;
+.main-contents {
   margin-left: 5px;
-  /* position: fixed; */
-  overflow-y: scroll;
-  top: 0;
-  bottom: 0;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
-.expand-all-button{
+.expand-all-button {
   margin-left: 10px;
 }
