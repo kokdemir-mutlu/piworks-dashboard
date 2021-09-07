@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PIModule2 } from 'src/app/models/pi-modules2';
+import { MockModulesService } from 'src/app/services/mock-modules.service';
 
 @Component({
   selector: 'app-project-contents',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectContentsComponent implements OnInit {
 
-  constructor() { }
+  projectGroups : PIModule2[] = [];
+
+  constructor(private projectsService:MockModulesService) { }
 
   ngOnInit(): void {
+    this.getProjects();
+  }
+
+  getProjects():void{
+    this.projectsService.getModules().subscribe(data => this.projectGroups = data);
   }
 
   showBuilds():void{
