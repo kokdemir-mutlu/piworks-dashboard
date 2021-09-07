@@ -1,18 +1,10 @@
 <div class="main-contents">
   <h1>Title For Projects Page</h1>
   <div class="btn-group" role="group" aria-label="Basic example">
-    <button
-      (click)="showBuilds()"
-      type="button"
-      class="btn btn-outline-primary"
-    >
+    <button (click)="showBuilds()" type="button" class="btn btn-outline-primary">
       Builds
     </button>
-    <button
-      (click)="showTrends()"
-      type="button"
-      class="btn btn-outline-primary"
-    >
+    <button (click)="showTrends()" type="button" class="btn btn-outline-primary">
       Trends
     </button>
   </div>
@@ -24,7 +16,7 @@
   <br />
   <br />
 
-  <div class="accordion open" id="accordionExample">
+  <!-- <div class="accordion open" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
         <button
@@ -118,6 +110,16 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
+  <dx-tree-view id="treeview" [items]="projectGroups" style="position: relative;">
+    <div *dxTemplate="let item of 'item'" style="width: 98%; position: absolute;">
+      {{ item.text }}
+
+      <dx-button  text="..." style="float: right;">
+      </dx-button>
+      <dx-button text="Run" style="float: right;">
+      </dx-button>
+    </div>
+  </dx-tree-view>
 </div>
