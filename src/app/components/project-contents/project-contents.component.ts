@@ -29,4 +29,8 @@ export class ProjectContentsComponent implements OnInit {
 
   }
 
+  expandClick(e: any){
+    console.log(e);
+  }
+
 }

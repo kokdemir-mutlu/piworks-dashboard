@@ -112,7 +112,7 @@
     </div>
   </div> -->
 
-  <dx-tree-view id="treeview" [items]="projectGroups" style="position: relative;">
+  <!-- <dx-tree-view id="treeview" [items]="projectGroups" style="position: relative;">
     <div *dxTemplate="let item of 'item'" style="width: 98%; position: absolute;">
       {{ item.text }}
 
@@ -121,5 +121,29 @@
       <dx-button text="Run" style="float: right;">
       </dx-button>
     </div>
-  </dx-tree-view>
+  </dx-tree-view> -->
+
+  <!-- <div>
+    <dx-button stylingMode="text" text="Text" type="normal" [width]="120" (onClick)="expandClick($event)">
+    </dx-button>
+  </div> -->
+
+  <!-- <div class="list-container">
+    <dx-list
+        height="100%"
+        [dataSource]="projectGroups"
+        [grouped]="true"
+        [collapsibleGroups]="true">
+        <div *dxTemplate="let item of 'group'">
+            <div>Assigned: {{item.key}}</div>
+        </div>
+    </dx-list>
+</div> -->
+
+  <ul>
+    <ng-container *ngFor="let item of projectGroups">
+      <app-group-node [groupNode]='item'></app-group-node>
+    </ng-container>
+  </ul>
+
 </div>
