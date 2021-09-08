@@ -13,9 +13,15 @@ export class GroupNodeComponent implements OnInit {
     text : ''
   };
 
+  expandChildNodes = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  expand():void{
+    this.expandChildNodes = !this.expandChildNodes;
   }
 
 }

@@ -21,11 +21,11 @@ export class ProjectContentsComponent implements OnInit {
     this.projectsService.getModules().subscribe(data => this.projectGroups = data);
   }
 
-  showBuilds():void{
+  showBuilds(e:any):void{
 
   }
 
-  showTrends():void{
+  showTrends(e:any):void{
 
   }
 
