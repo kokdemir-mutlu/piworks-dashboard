@@ -5,12 +5,16 @@
       <dx-button *ngIf="!groupNode.items"  style="float: right;">Run</dx-button>
     </p>
   </div>
-  <div  *ngIf="expandChildNodes; else expandProjectInfo">
-    <ul *ngFor="let item of groupNode.items">
-      <app-group-node [groupNode]='item'></app-group-node>
-    </ul>
+  <div  *ngIf="expandChildNodes">
+    <div *ngIf="isGroup; else expandProjectInfo">
+      <ul *ngFor="let item of groupNode.items">
+        <app-group-node [groupNode]='item'></app-group-node>
+      </ul>
+    </div>
+    <ng-template #expandProjectInfo>
+      <div class="project-info">
+        {{groupNode.text}} project infos
+      </div>
+    </ng-template>
   </div>
-  <ng-template #expandProjectInfo>
-
-  </ng-template>
 </li>

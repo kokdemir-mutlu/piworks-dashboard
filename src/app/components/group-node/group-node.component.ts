@@ -14,10 +14,14 @@ export class GroupNodeComponent implements OnInit {
   };
 
   expandChildNodes = false;
+  isGroup = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    if(this.groupNode.items){
+      this.isGroup = true;
+    }
   }
 
   expand():void{
