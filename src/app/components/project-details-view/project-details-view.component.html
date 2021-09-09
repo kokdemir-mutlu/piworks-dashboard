@@ -1,0 +1,42 @@
+<div class="main-contents">
+  <h1>Title For Projects Page</h1>
+  <div role="group" aria-label="Basic example">
+    <dx-button class="group-btn" stylingMode="outlined" text="Outlined" type="normal" (onClick)="showBuilds($event)">
+      Builds
+    </dx-button>
+    <!-- <dx-button class="group-btn" stylingMode="outlined"
+      text="Outlined"
+      type="normal"
+      (onClick)="showTrends($event)">
+      Trends
+    </dx-button> -->
+
+    <dx-button class="expand-btn" stylingMode="outlined" text="Outlined" type="normal" (onClick)="expandAll($event)">
+      Expand All
+    </dx-button>
+
+  </div>
+
+  <br />
+  <br />
+
+  <div id="accordion">
+    <dx-accordion #accordion [dataSource]="projectGroups" [collapsible]="true" [multiple]="true" [animationDuration]="300"
+      [selectedItems]="[projectGroups[0]]">
+      <div *dxTemplate="let project of 'title'">
+        <h1>{{project.text}}</h1>
+      </div>
+      <div *dxTemplate="let project of 'item'">
+        <div class="build-content">
+          Build content
+        </div>
+      </div>
+    </dx-accordion>
+
+  </div>
+
+  <!-- <ng-container *ngFor="let item of projectGroups">
+    <app-group-node [groupNode]='item'></app-group-node>
+  </ng-container> -->
+
+</div>

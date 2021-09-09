@@ -13,6 +13,8 @@ export class GroupNodeComponent implements OnInit {
     text : ''
   };
 
+  tasks: string[] = [];
+
   expandChildNodes = false;
   isGroup = false;
 

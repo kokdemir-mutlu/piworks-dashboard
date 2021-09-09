@@ -1,37 +1,5 @@
-<div class="title-div">
-  <p class="title">
-    <i (click)='expand()' class="fa fa-angle-right icon-title"></i>
-    {{groupNode.text}}
-    <dx-button *ngIf="!groupNode.items" class='run-button-group'>...</dx-button>
-    <dx-button *ngIf="!groupNode.items" class='run-button-group'>Run</dx-button>
-  </p>
+<dx-list
+  [dataSource]="tasks"
+>
 
-</div>
-<div class='content-div'  *ngIf="expandChildNodes">
-  <div *ngIf="isGroup; else expandProjectInfo">
-    <div *ngFor="let item of groupNode.items">
-      <app-group-node [groupNode]='item'></app-group-node>
-    </div>
-  </div>
-  <ng-template #expandProjectInfo>
-    <div class="project-info">
-      <div class='info-div1'>
-        <p>{{groupNode.text}} project infos</p>
-        <p>{{groupNode.text}} oweiur</p>
-      </div>
-
-      <div class='info-div2'>
-
-      </div>
-
-      <div class='info-div3'>
-
-      </div>
-
-      <div class='info-div4'>
-
-      </div>
-    </div>
-    <br/>
-  </ng-template>
-</div>
+</dx-list>

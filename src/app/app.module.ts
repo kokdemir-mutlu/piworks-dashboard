@@ -9,9 +9,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DxBoxModule, DxTextBoxModule, DxTreeListModule, DxAccordionModule, DxButtonModule, DxButtonGroupModule, DxTreeViewModule, DxListModule } from 'devextreme-angular';
 import { LoginComponent } from './components/login/login.component';
-import { ProjectContentsComponent } from './components/project-contents/project-contents.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { GroupNodeComponent } from './components/group-node/group-node.component';
+import { ProjectDetailsViewComponent } from './components/project-details-view/project-details-view.component';
 
 
 @NgModule({
@@ -19,9 +19,10 @@ import { GroupNodeComponent } from './components/group-node/group-node.component
     AppComponent,
     SidebarComponent,
     LoginComponent,
-    ProjectContentsComponent,
+    ProjectDetailsViewComponent,
     HomePageComponent,
-    GroupNodeComponent
+    GroupNodeComponent,
+    ProjectDetailsViewComponent
   ],
   imports: [
     BrowserModule,
