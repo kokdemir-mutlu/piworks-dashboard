@@ -150,10 +150,8 @@
     </dx-list>
 </div> -->
 
-  <ul>
-    <ng-container *ngFor="let item of projectGroups">
-      <app-group-node [groupNode]='item'></app-group-node>
-    </ng-container>
-  </ul>
+  <ng-container *ngFor="let item of projectGroups">
+    <app-group-node [groupNode]='item'></app-group-node>
+  </ng-container>
 
 </div>
