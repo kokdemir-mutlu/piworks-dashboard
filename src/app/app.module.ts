@@ -7,11 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DxBoxModule, DxTextBoxModule, DxTreeListModule, DxAccordionModule, DxButtonModule, DxButtonGroupModule, DxTreeViewModule, DxListModule } from 'devextreme-angular';
+import { DxBoxModule, DxTextBoxModule, DxTreeListModule, DxAccordionModule, DxButtonModule, DxButtonGroupModule, DxTreeViewModule, DxListModule, DxDataGridModule } from 'devextreme-angular';
 import { LoginComponent } from './components/login/login.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { GroupNodeComponent } from './components/group-node/group-node.component';
 import { ProjectDetailsViewComponent } from './components/project-details-view/project-details-view.component';
+import { BuildDetailsComponent } from './components/build-details/build-details.component';
 
 
 @NgModule({
@@ -21,8 +21,8 @@ import { ProjectDetailsViewComponent } from './components/project-details-view/p
     LoginComponent,
     ProjectDetailsViewComponent,
     HomePageComponent,
-    GroupNodeComponent,
-    ProjectDetailsViewComponent
+    ProjectDetailsViewComponent,
+    BuildDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +37,8 @@ import { ProjectDetailsViewComponent } from './components/project-details-view/p
     ReactiveFormsModule,
     DxButtonModule,
     DxButtonGroupModule,
-    DxListModule
+    DxListModule,
+    DxDataGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

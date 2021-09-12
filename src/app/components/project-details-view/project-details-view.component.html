@@ -1,7 +1,13 @@
 <div class="main-contents">
   <h1>Title For Projects Page</h1>
   <div role="group" aria-label="Basic example">
-    <dx-button class="group-btn" stylingMode="outlined" text="Outlined" type="normal" (onClick)="showBuilds($event)">
+    <dx-button
+      class="group-btn"
+      stylingMode="outlined"
+      text="Outlined"
+      type="normal"
+      (onClick)="showBuilds($event)"
+    >
       Builds
     </dx-button>
     <!-- <dx-button class="group-btn" stylingMode="outlined"
@@ -11,16 +17,21 @@
       Trends
     </dx-button> -->
 
-    <dx-button class="expand-btn" stylingMode="outlined" text="Outlined" type="normal" (onClick)="expandAll($event)">
+    <dx-button
+      class="expand-btn"
+      stylingMode="outlined"
+      text="Outlined"
+      type="normal"
+      (onClick)="expandAll($event)"
+    >
       Expand All
     </dx-button>
-
   </div>
 
   <br />
   <br />
 
-  <div id="accordion">
+  <!-- <div id="accordion">
     <dx-accordion #accordion [dataSource]="projectGroups" [collapsible]="true" [multiple]="true" [animationDuration]="300"
       [selectedItems]="[projectGroups[0]]">
       <div *dxTemplate="let project of 'title'">
@@ -33,10 +44,33 @@
       </div>
     </dx-accordion>
 
-  </div>
+  </div> -->
 
-  <!-- <ng-container *ngFor="let item of projectGroups">
-    <app-group-node [groupNode]='item'></app-group-node>
-  </ng-container> -->
+  <!-- <dx-accordion [dataSource]="accordionData" itemTemplate="item">
+    <div *dxTemplate="let itemData of 'item'">
+      <p *ngFor="let key of getItemKeys(itemData)">
+        {{ key }}: {{ itemData[key] }}
+      </p>
+    </div>
+  </dx-accordion> -->
+
+  <!-- <dx-accordion
+    [dataSource]="projectBranches"
+    itemTitleTemplate="title"
+    itemTemplate="item"
+  >
+    <div *dxTemplate="let projectBranch of 'title'">
+      <span>{{ projectBuild.id }}</span>
+      <button style="float: right">Run</button>
+    </div>
+    <div *dxTemplate="let projectBranch of 'item'">
+      <div class="branch-details">
+        <div *ngFor="let buildNumberDetails of projectBranch">
+
+        </div>
+      </div>
+
+    </div>
+  </dx-accordion> -->
 
 </div>

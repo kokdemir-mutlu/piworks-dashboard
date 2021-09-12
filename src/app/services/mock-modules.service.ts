@@ -1,3 +1,7 @@
+import { ProjectBranch } from './../models/project-branch';
+import { PIProject } from './../models/pi-project';
+import { PIGroup } from './../models/pi-group';
+import { BuildNumberDetail } from './../models/build-number-detail';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { PIModule } from '../models/pi-module';
@@ -8,42 +12,319 @@ import { PIModule2 } from '../models/pi-modules2';
 })
 export class MockModulesService {
 
-  modules : PIModule[] = [
-    {id: 1, idForTreeView : '1', name: 'module1', projects: [
-      {id: 1, idForTreeView : '1_1', name: 'project1'},
-      {id: 2, idForTreeView : '1_2', name: 'project2'},
-      {id: 3, idForTreeView : '1_3', name: 'project3'},
-      {id: 4, idForTreeView : '1_4', name: 'project4'},
-      ],
-      modules: [
-        {id: 2, idForTreeView : '2', name: 'module2', projects: [
-          {id: 5, idForTreeView : '2_1', name: 'project5'},
-          {id: 6, idForTreeView : '2_2', name: 'project6'},
-          {id: 7, idForTreeView : '2_3', name: 'project7'},
-          {id: 8, idForTreeView : '2_4', name: 'project8'},
-          ],
-          modules: [
-
-          ]}
-      ]},
-    {id: 3, idForTreeView : '3', name: 'module3', projects: [
-      {id: 9, idForTreeView : '3_1', name: 'project9'},
-      {id: 10, idForTreeView : '3_2', name: 'project10'},
-      {id: 11, idForTreeView : '3_3', name: 'project11'},
-      {id: 12, idForTreeView : '3_4', name: 'project12'},
-      ],
-      modules: [
-        {id: 4, idForTreeView : '4', name: 'module4', projects: [
-          {id: 13, idForTreeView : '4_1', name: 'project13'},
-          {id: 14, idForTreeView : '4_2', name: 'project14'},
-          {id: 15, idForTreeView : '4_3', name: 'project15'},
-          {id: 16, idForTreeView : '4_4', name: 'project16'},
-          ],
-          modules: [
-
-          ]}
-      ]}
+  buildNumberDetails : BuildNumberDetail[] = [
+    {
+      id : 1,
+      name : '#123',
+      idForTreeView : 'string1',
+      buildNumber: 'string2',
+      overview : 'string3',
+      changes : ['string4','string5'],
+      tests: ['string4','string5'],
+      buildLog: 'string4',
+      parameters: ['string4','string5'],
+      issues: ['string4','string5'],
+      artifacts: ['string4','string5'],
+      nugetPackages: ['string4','string5'],
+      zipSecurity: 'string5'
+    },
+    {
+      id : 2,
+      name : '#223',
+      idForTreeView : 'string12',
+      buildNumber: 'string22',
+      overview : 'string33',
+      changes : ['string43','string5'],
+      tests: ['string42','string5'],
+      buildLog: 'string41',
+      parameters: ['string44','string5'],
+      issues: ['string4','string5'],
+      artifacts: ['string4','string5'],
+      nugetPackages: ['string4','string5'],
+      zipSecurity: 'string5'
+    },
+    {
+      id : 3,
+      name : '#323',
+      idForTreeView : 'string13',
+      buildNumber: 'string25',
+      overview : 'string33',
+      changes : ['string4','string57'],
+      tests: ['string4','string5'],
+      buildLog: 'string4',
+      parameters: ['string4','string5'],
+      issues: ['string4','string5'],
+      artifacts: ['string4','string5'],
+      nugetPackages: ['string4','string5'],
+      zipSecurity: 'string5'
+    },
+    {
+      id : 4,
+      name : '#423',
+      idForTreeView : 'string14',
+      buildNumber: 'string27',
+      overview : 'string34',
+      changes : ['string4','string5'],
+      tests: ['string4','string5'],
+      buildLog: 'string4',
+      parameters: ['string4','string5'],
+      issues: ['string4','string5'],
+      artifacts: ['string4','string5'],
+      nugetPackages: ['string4','string5'],
+      zipSecurity: 'string5'
+    }
   ];
+
+
+
+
+  group1Project1Branches : ProjectBranch[] = [
+    {
+      id : 1,
+      name : 'branch1_1_1',
+      idForTreeView : '1_1_1',
+      buildNumberDetails : [],
+      status : 'success',
+      changes : [],
+      agent : 'agent1',
+      started : 'a date',
+      duration : 'a duration'
+    },
+    {
+      id : 1,
+      name : 'branch1_1_2',
+      idForTreeView : '1_1_2',
+      buildNumberDetails : [],
+      status : 'success',
+      changes : [],
+      agent : 'agent1',
+      started : 'a date',
+      duration : 'a duration'
+    },
+    {
+      id : 1,
+      name : 'branch1_1_3',
+      idForTreeView : '1_1_3',
+      buildNumberDetails : [],
+      status : 'success',
+      changes : [],
+      agent : 'agent1',
+      started : 'a date',
+      duration : 'a duration'
+    }
+  ];
+
+  group1Projects : PIProject[] = [
+    {
+      id : 1,
+      idForTreeView : '1_1',
+      name : 'project1_1',
+      children : this.group1Project1Branches
+    },
+    {
+      id : 2,
+      idForTreeView : '1_2',
+      name : 'project1_2',
+      children : []
+    },
+    {
+      id : 3,
+      idForTreeView : '1_3',
+      name : 'project1_3',
+      children : []
+    },
+    {
+      id : 4,
+      idForTreeView : '1_4',
+      name : 'project1_4',
+      children : []
+    },
+    {
+      id : 5,
+      idForTreeView : '1_5',
+      name : 'project1_5',
+      children : []
+    }
+  ];
+
+
+
+
+  group2Project1Branches : ProjectBranch[] = [
+    {
+      id : 1,
+      name : 'branch2_1_1',
+      idForTreeView : '2_1_1',
+      buildNumberDetails : [],
+      status : 'success',
+      changes : [],
+      agent : 'agent2',
+      started : 'a date',
+      duration : 'a duration'
+    },
+    {
+      id : 1,
+      name : 'branch2_1_2',
+      idForTreeView : '2_1_2',
+      buildNumberDetails : [],
+      status : 'success',
+      changes : [],
+      agent : 'agent2',
+      started : 'a date',
+      duration : 'a duration'
+    },
+    {
+      id : 1,
+      name : 'branch2_1_3',
+      idForTreeView : '2_1_3',
+      buildNumberDetails : [],
+      status : 'success',
+      changes : [],
+      agent : 'agent1',
+      started : 'a date',
+      duration : 'a duration'
+    }
+  ];
+
+  group2Projects : PIProject[] = [
+    {
+      id : 1,
+      idForTreeView : '2_1',
+      name : 'project1',
+      children : this.group2Project1Branches
+    },
+    {
+      id : 2,
+      idForTreeView : '2_2',
+      name : 'project2',
+      children : []
+    },
+    {
+      id : 3,
+      idForTreeView : '2_3',
+      name : 'project3',
+      children : []
+    },
+    {
+      id : 4,
+      idForTreeView : '2_4',
+      name : 'project4',
+      children : []
+    },
+    {
+      id : 5,
+      idForTreeView : '2_5',
+      name : 'project5',
+      children : []
+    }
+  ];
+
+  group4Projects : PIProject[] = [
+    {
+      id : 1,
+      idForTreeView : '2_6_1',
+      name : 'project1',
+      children : []
+    },
+    {
+      id : 2,
+      idForTreeView : '2_6_2',
+      name : 'project2',
+      children : []
+    },
+    {
+      id : 3,
+      idForTreeView : '2_6_3',
+      name : 'project3',
+      children : []
+    },
+    {
+      id : 4,
+      idForTreeView : '2_6_4',
+      name : 'project4',
+      children : []
+    },
+    {
+      id : 5,
+      idForTreeView : '2_6_5',
+      name : 'project5',
+      children : []
+    }
+  ];
+
+
+
+  // piGroups : PIGroup[] = [
+  //   {
+  //     id : 1,
+  //     idForTreeView : '1',
+  //     name : 'group1',
+  //     projects : this.group1Projects,
+  //     subGroups: []
+  //   },
+  //   {
+  //     id : 2,
+  //     idForTreeView : '2',
+  //     name : 'group2',
+  //     projects : this.group2Projects,
+  //     subGroups: [
+  //       {
+  //         id : 4,
+  //         idForTreeView : '2_6',
+  //         name : 'group4',
+  //         projects : this.group4Projects,
+  //         subGroups: []
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     id : 3,
+  //     idForTreeView : '3',
+  //     name : 'group3',
+  //     projects : [],
+  //     subGroups: []
+  //   }
+  // ];
+
+  piGroups2 : PIGroup[] = [
+    {
+      id : 1,
+      idForTreeView : '1',
+      name : 'group1',
+      children : this.group1Projects
+    },
+    {
+      id : 2,
+      idForTreeView : '2',
+      name : 'group2',
+      children : [
+        ...this.group2Projects,
+        ...[
+          {
+            id : 4,
+            idForTreeView : '2_6',
+            name : 'group4',
+            children : this.group4Projects
+          }
+        ]
+      ]
+    },
+    {
+      id : 3,
+      idForTreeView : '3',
+      name : 'group3',
+      children : []
+    }
+  ];
+
+  getGroups():Observable<PIGroup[]>{
+    return of(this.piGroups2);
+  }
+
+
+  getBuildNumberDetails():Observable<BuildNumberDetail[]>{
+    return of(this.buildNumberDetails);
+  }
 
   modules2 : PIModule2[] = [{
   id: "1",

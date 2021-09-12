@@ -1,7 +1,10 @@
 <div class="sidebar">
   <dx-tree-view
     id="treeView"
-    [items] = 'modules'
+    [items] = 'piGroups'
+    keyExpr = 'idForTreeView'
+    displayExpr = 'name'
+    itemsExpr = 'children'
     [searchEnabled]="true"
     searchMode="startswith"
   >

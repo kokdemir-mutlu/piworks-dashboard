@@ -1,6 +1,9 @@
 import { BuildNumberDetail } from "./build-number-detail";
 
-export interface ProjectBuild{
+export interface ProjectBranch{
+  id : number;
+  name : string;
+  idForTreeView : string;
   buildNumberDetails : BuildNumberDetail[];
   status : string;
   changes : string[]; // names

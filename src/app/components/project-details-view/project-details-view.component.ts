@@ -1,41 +1,121 @@
+import { ProjectBranch } from '../../models/project-branch';
+import { BuildNumberDetail } from './../../models/build-number-detail';
 import { Component, OnInit } from '@angular/core';
 import { PIModule2 } from 'src/app/models/pi-modules2';
 import { MockModulesService } from 'src/app/services/mock-modules.service';
 
+
+
 @Component({
   selector: 'app-project-details-view',
   templateUrl: './project-details-view.component.html',
-  styleUrls: ['./project-details-view.component.css']
+  styleUrls: ['./project-details-view.component.css'],
 })
 export class ProjectDetailsViewComponent implements OnInit {
+  projectGroups: PIModule2[] = [];
 
-
-  projectGroups : PIModule2[] = [];
-
-  constructor(private projectsService:MockModulesService) { }
+  constructor(private projectsService: MockModulesService) {}
 
   ngOnInit(): void {
     this.getProjects();
+    this.getBuildNumberDetails();
   }
 
-  getProjects():void{
-    this.projectsService.getModules().subscribe(data => this.projectGroups = data);
+  getProjects(): void {
+    this.projectsService
+      .getModules()
+      .subscribe((data) => (this.projectGroups = data));
   }
 
-  showBuilds(e:any):void{
 
+
+  buildNumberDetails : BuildNumberDetail[] = [];
+  getBuildNumberDetails():void{
+    this.projectsService
+      .getBuildNumberDetails()
+      .subscribe((data) => (this.buildNumberDetails));
   }
 
-  showTrends(e:any):void{
 
-  }
+  // projectBranches : ProjectBranch[] = [
+  //   {
+  //     id : 1,
+  //     idForTreeView : 'id1',
+  //     buildNumberDetails : this.buildNumberDetails,
+  //     status : 'status1',
+  //     changes : ['ch1','ch2'], // names
+  //     agent : 'agent1',
+  //     started : 'started1',
+  //     duration : 'duration1'
+  //   },
+  //   {
+  //     id : 2,
+  //     idForTreeView : 'id2',
+  //     buildNumberDetails : this.buildNumberDetails,
+  //     status : 'status1',
+  //     changes : ['ch1','ch2'], // names
+  //     agent : 'agent1',
+  //     started : 'started1',
+  //     duration : 'duration1'
+  //   },
+  //   {
+  //     id : 3,
+  //     idForTreeView : 'id1',
+  //     buildNumberDetails : this.buildNumberDetails,
+  //     status : 'status1',
+  //     changes : ['ch1','ch2'], // names
+  //     agent : 'agent1',
+  //     started : 'started1',
+  //     duration : 'duration1'
+  //   }
+  // ];
 
-  expandAll(e:any):void{
+  showBuilds(e: any): void {}
 
-  }
+  showTrends(e: any): void {}
 
-  expandClick(e: any){
+  expandAll(e: any): void {}
+
+  expandClick(e: any) {
     console.log(e);
   }
 
+  accordionData = [
+    {
+      title: 'Personal Data',
+      firstName: 'John',
+      lastName: 'Smith',
+      birthYear: 1986,
+    },
+    {
+      title: 'Contacts',
+      phone: '(555)555-5555',
+      email: 'John.Smith@example.com',
+    },
+    {
+      title: 'Address',
+      state: 'CA',
+      city: 'San Francisco',
+      street: 'Stanford Ave',
+    },
+  ];
+  getItemKeys(item: any) {
+    return Object.keys(item);
+  }
+
+  // another sample
+  accordionData2 = [
+    {
+      firstName: 'John',
+      lastName: 'Smith',
+      birthDate: '1986/03/14',
+      position: 'Network Administrator',
+    },
+    {
+      firstName: 'Samantha',
+      lastName: 'Jones',
+      birthDate: '1972/11/13',
+      position: 'Technical Writer',
+    },
+  ];
 }

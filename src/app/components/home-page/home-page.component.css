@@ -3,13 +3,13 @@
 }
 
 .left-side{
-  flex: 2;
+  flex: 1;
   height: 100vh;
   overflow: scroll;
 }
 
 .main-contents{
-  flex: 10;
+  flex: 4;
   height: 100vh;
   overflow: scroll;
 }

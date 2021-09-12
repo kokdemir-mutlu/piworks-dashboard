@@ -1,4 +1,7 @@
 export interface BuildNumberDetail{
+  id : number;
+  name : string;
+  idForTreeView : string;
   buildNumber: string;
   overview : string;
   changes : string[];

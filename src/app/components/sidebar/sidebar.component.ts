@@ -1,3 +1,4 @@
+import { PIGroup } from './../../models/pi-group';
 import { PIModule } from 'src/app/models/pi-module';
 import { MockModulesService } from 'src/app/services/mock-modules.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,11 +12,17 @@ import { PIModule2 } from 'src/app/models/pi-modules2';
 export class SidebarComponent implements OnInit {
 
   modules : PIModule2[] = [];
+  piGroups : PIGroup[] = [];
 
   constructor(private modulesService: MockModulesService) { }
 
   ngOnInit(): void {
     this.getModules();
+    this.getGroups();
+  }
+
+  getGroups():void{
+    this.modulesService.getGroups().subscribe(data => this.piGroups = data);
   }
 
   getModules():void{

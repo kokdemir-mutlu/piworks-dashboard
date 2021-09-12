@@ -1,8 +1,8 @@
-import { ProjectBuild } from "./project-build";
+import { ProjectBranch } from "./project-branch";
 
 export interface PIProject{
   id : number;
   idForTreeView : string;
   name : string;
-  builds : ProjectBuild[];
+  children : ProjectBranch[];
 }
