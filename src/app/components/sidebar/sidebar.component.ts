@@ -29,4 +29,11 @@ export class SidebarComponent implements OnInit {
     this.modulesService.getModules().subscribe(data => this.modules = data)
   }
 
+  onItemClick(event:any):void{
+    var node = event.node;
+    // node.itemData.expandItem(node.itemData.idForTreeView);
+
+    console.log(node.itemData.name);
+  }
+
 }

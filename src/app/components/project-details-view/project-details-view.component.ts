@@ -3,6 +3,7 @@ import { BuildNumberDetail } from './../../models/build-number-detail';
 import { Component, OnInit } from '@angular/core';
 import { PIModule2 } from 'src/app/models/pi-modules2';
 import { MockModulesService } from 'src/app/services/mock-modules.service';
+import { PIGroup } from 'src/app/models/pi-group';
 
 
 
@@ -14,11 +15,15 @@ import { MockModulesService } from 'src/app/services/mock-modules.service';
 export class ProjectDetailsViewComponent implements OnInit {
   projectGroups: PIModule2[] = [];
 
+  projectGroups2 : PIGroup[] = [];
+
   constructor(private projectsService: MockModulesService) {}
 
   ngOnInit(): void {
     this.getProjects();
     this.getBuildNumberDetails();
+    this.getGroups();
+    // this.trialFuntion();
   }
 
   getProjects(): void {
@@ -36,6 +41,23 @@ export class ProjectDetailsViewComponent implements OnInit {
       .subscribe((data) => (this.buildNumberDetails));
   }
 
+
+  getGroups():void{
+    this.projectsService.getGroups().subscribe(data => this.projectGroups2 = data);
+  }
+
+
+  trialFuntion():void{
+    var items = this.projectGroups2[1].children;
+    items.forEach(element => {
+      if(element.name.includes('group')){
+        console.log('this element is a group and its name is : ' + element.name);
+      }
+      else{
+        console.log('this element is a project and its name is : ' + element.name);
+      }
+    });
+  }
 
   // projectBranches : ProjectBranch[] = [
   //   {

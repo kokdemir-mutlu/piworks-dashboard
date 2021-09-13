@@ -12,6 +12,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { ProjectDetailsViewComponent } from './components/project-details-view/project-details-view.component';
 import { BuildDetailsComponent } from './components/build-details/build-details.component';
+import { GroupDetailsViewComponent } from './components/group-details-view/group-details-view.component';
+import { BranchDetailsViewComponent } from './components/branch-details-view/branch-details-view.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { BuildDetailsComponent } from './components/build-details/build-details.
     ProjectDetailsViewComponent,
     HomePageComponent,
     ProjectDetailsViewComponent,
-    BuildDetailsComponent
+    BuildDetailsComponent,
+    GroupDetailsViewComponent,
+    BranchDetailsViewComponent
   ],
   imports: [
     BrowserModule,
