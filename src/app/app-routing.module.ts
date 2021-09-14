@@ -7,11 +7,15 @@ import { GroupDetailsViewComponent } from './components/group-details-view/group
 import { BranchDetailsViewComponent } from './components/branch-details-view/branch-details-view.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', component: LoginComponent},
-  {path: 'home', component: HomePageComponent},
-  {path: 'groups/:id', component: GroupDetailsViewComponent, outlet:'content'},
-  {path: 'projects/:id', component: ProjectDetailsViewComponent, outlet:'content'},
-  {path: 'branches/:id', component: BranchDetailsViewComponent, outlet:'content'}
+  {path: 'home',
+    component: HomePageComponent,
+    children: [
+      {path: 'groups/:id', component: GroupDetailsViewComponent, outlet:'content'},
+      {path: 'projects/:id', component: ProjectDetailsViewComponent, outlet:'content'},
+      {path: 'branches/:id', component: BranchDetailsViewComponent, outlet:'content'},
+      ]
+  },
+  {path: '', pathMatch: 'full', component: LoginComponent}
 ];
 
 @NgModule({

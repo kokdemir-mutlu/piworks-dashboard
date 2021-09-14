@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { PIModule2 } from 'src/app/models/pi-modules2';
 import { MockModulesService } from 'src/app/services/mock-modules.service';
 import { PIGroup } from 'src/app/models/pi-group';
+import { ActivatedRoute } from '@angular/router';
+import { PIProject } from 'src/app/models/pi-project';
 
 
 
@@ -17,12 +19,43 @@ export class ProjectDetailsViewComponent implements OnInit {
 
   projectGroups2 : PIGroup[] = [];
 
-  constructor(private projectsService: MockModulesService) {}
+  project : PIProject = {
+    id : 0,
+    idForTreeView : '',
+    name : '',
+    children : [
+      {
+        id: 0,
+        name : '',
+        idForTreeView : '',
+        buildNumberDetails : [],
+        status : '',
+        changes : [],
+        agent : '',
+        started : '',
+        duration : ''
+      }
+    ]
+  }
+
+  projects: PIProject[] = [];
+
+  projectId : string = '';
+
+  constructor(private projectsService: MockModulesService,
+    private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.getProjects();
-    this.getBuildNumberDetails();
-    this.getGroups();
+    // this.getProjects();
+    // this.getBuildNumberDetails();
+    // this.getGroups();
+
+    this.route.params.subscribe(p => this.projectId = p.id)
+    var p = this.projectsService.getGroup1Project(this.projectId);
+    if(p !== undefined)
+      this.project = p;
+
+
     // this.trialFuntion();
   }
 
@@ -59,38 +92,7 @@ export class ProjectDetailsViewComponent implements OnInit {
     });
   }
 
-  // projectBranches : ProjectBranch[] = [
-  //   {
-  //     id : 1,
-  //     idForTreeView : 'id1',
-  //     buildNumberDetails : this.buildNumberDetails,
-  //     status : 'status1',
-  //     changes : ['ch1','ch2'], // names
-  //     agent : 'agent1',
-  //     started : 'started1',
-  //     duration : 'duration1'
-  //   },
-  //   {
-  //     id : 2,
-  //     idForTreeView : 'id2',
-  //     buildNumberDetails : this.buildNumberDetails,
-  //     status : 'status1',
-  //     changes : ['ch1','ch2'], // names
-  //     agent : 'agent1',
-  //     started : 'started1',
-  //     duration : 'duration1'
-  //   },
-  //   {
-  //     id : 3,
-  //     idForTreeView : 'id1',
-  //     buildNumberDetails : this.buildNumberDetails,
-  //     status : 'status1',
-  //     changes : ['ch1','ch2'], // names
-  //     agent : 'agent1',
-  //     started : 'started1',
-  //     duration : 'duration1'
-  //   }
-  // ];
+  runTheBranch(e: any):void{}
 
   showBuilds(e: any): void {}
 

@@ -1,7 +1,7 @@
 .main-contents {
   margin-left: 5px;
   margin-right: 5px;
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 .expand-all-button {
@@ -15,4 +15,27 @@
 .expand-btn{
   margin-left: 15px;
   height: 25px;
+}
+
+.branch-details{
+  display: flex;
+}
+
+.branch-det-1{
+  flex: 2;
+}
+.branch-det-1{
+  flex: 1;
+}
+.branch-det-1{
+  flex: 1;
+}
+.branch-det-1{
+  flex: 1;
+}
+.branch-det-1{
+  flex: 1;
+}
+.branch-det-1{
+  flex: 1;
 }

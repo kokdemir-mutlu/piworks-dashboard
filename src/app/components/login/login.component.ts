@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
   }
 
   goToHomePage():void{
-    console.log('going to home')
+    console.log('going home')
     this.router.navigate(['home'])
   }
 }

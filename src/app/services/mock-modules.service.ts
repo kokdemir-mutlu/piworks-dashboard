@@ -83,7 +83,7 @@ export class MockModulesService {
       id : 1,
       name : 'branch1_1_1',
       idForTreeView : '1_1_1',
-      buildNumberDetails : [],
+      buildNumberDetails : this.buildNumberDetails,
       status : 'success',
       changes : [],
       agent : 'agent1',
@@ -91,7 +91,7 @@ export class MockModulesService {
       duration : 'a duration'
     },
     {
-      id : 1,
+      id : 2,
       name : 'branch1_1_2',
       idForTreeView : '1_1_2',
       buildNumberDetails : [],
@@ -102,7 +102,7 @@ export class MockModulesService {
       duration : 'a duration'
     },
     {
-      id : 1,
+      id : 3,
       name : 'branch1_1_3',
       idForTreeView : '1_1_3',
       buildNumberDetails : [],
@@ -147,8 +147,11 @@ export class MockModulesService {
     }
   ];
 
-
-
+  getGroup1Project(id: string):PIProject | undefined{
+    return this.group1Projects.find(project => {
+        return parseInt(id) === project.id;
+    });
+  }
 
   group2Project1Branches : ProjectBranch[] = [
     {
@@ -163,7 +166,7 @@ export class MockModulesService {
       duration : 'a duration'
     },
     {
-      id : 1,
+      id : 2,
       name : 'branch2_1_2',
       idForTreeView : '2_1_2',
       buildNumberDetails : [],
@@ -174,7 +177,7 @@ export class MockModulesService {
       duration : 'a duration'
     },
     {
-      id : 1,
+      id : 3,
       name : 'branch2_1_3',
       idForTreeView : '2_1_3',
       buildNumberDetails : [],

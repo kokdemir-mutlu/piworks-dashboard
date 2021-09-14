@@ -1,5 +1,5 @@
 <div class="main-contents">
-  <h1>Title For Projects Page</h1>
+  <h1>{{project.name}}</h1>
   <div role="group" aria-label="Basic example">
     <dx-button
       class="group-btn"
@@ -10,14 +10,15 @@
     >
       Builds
     </dx-button>
-    <!-- <dx-button class="group-btn" stylingMode="outlined"
+
+    <dx-button class="group-btn" stylingMode="outlined"
       text="Outlined"
       type="normal"
       (onClick)="showTrends($event)">
       Trends
-    </dx-button> -->
+    </dx-button>
 
-    <dx-button
+    <!-- <dx-button
       class="expand-btn"
       stylingMode="outlined"
       text="Outlined"
@@ -25,54 +26,59 @@
       (onClick)="expandAll($event)"
     >
       Expand All
-    </dx-button>
+    </dx-button> -->
+
   </div>
 
   <br />
   <br />
 
-  <!-- <div id="accordion">
-    <dx-accordion #accordion [dataSource]="projectGroups" [collapsible]="true" [multiple]="true" [animationDuration]="300"
-      [selectedItems]="[projectGroups[0]]">
-      <div *dxTemplate="let project of 'title'">
-        <h1>{{project.text}}</h1>
-      </div>
-      <div *dxTemplate="let project of 'item'">
-        <div class="build-content">
-          Build content
-        </div>
-      </div>
-    </dx-accordion>
-
-  </div> -->
-
-  <!-- <dx-accordion [dataSource]="accordionData" itemTemplate="item">
-    <div *dxTemplate="let itemData of 'item'">
-      <p *ngFor="let key of getItemKeys(itemData)">
-        {{ key }}: {{ itemData[key] }}
-      </p>
-    </div>
-  </dx-accordion> -->
-
-  <!-- <dx-accordion
-    [dataSource]="projectBranches"
+  <dx-accordion
+    [dataSource]="project.children"
     itemTitleTemplate="title"
     itemTemplate="item"
+    [multiple]= 'true'
   >
-    <div *dxTemplate="let projectBranch of 'title'">
-      <span>{{ projectBuild.id }}</span>
-      <button style="float: right">Run</button>
+    <div *dxTemplate="let branch of 'title'">
+      <span>{{ branch.name }}</span>
+      <dx-button style="float: right;" stylingMode="outlined"
+      text="Outlined"
+      type="normal"
+      (onClick)="runTheBranch($event)">
+      Run
+    </dx-button>
     </div>
-    <div *dxTemplate="let projectBranch of 'item'">
+    <div *dxTemplate="let data of 'item'">
       <div class="branch-details">
-        <div *ngFor="let buildNumberDetails of projectBranch">
-
+        <!-- {{data.buildNumberDetails[0].name}} -->
+        <!-- <div class="branch-det-1">
+          {{data.buildNumberDetails[0].name}}
         </div>
+        <div class="branch-det-2">
+          {{data.status}}
+        </div>
+        <div class="branch-det-3">
+          {{data.changes[0]}}
+        </div>
+        <div class="branch-det-4">
+          {{data.agent}}
+        </div>
+        <div class="branch-det-5">
+          {{data.started}}
+        </div>
+        <div class="branch-det-6">
+          {{data.duration}}
+        </div> -->
+
       </div>
 
     </div>
-  </dx-accordion> -->
+  </dx-accordion>
 
+  <br/>
+  <div>
+    project({{projectId}}) details works.
+  </div>
 
 
 </div>
